@@ -1,0 +1,11 @@
+<h1> Posts Index Page </h1>
+
+<div class="post-wrapper">
+  <% @posts.each do |x| %>
+    <h3 class="title"> <%= link_to x.title, x %> </h3>
+    <p class="body"> <%= truncate(x.body, length:10) %> </p>
+    <p class="date"> <%= time_ago_in_words(x.created_at) %> Ago </p>
+  <% end %>
+</div>
+<br>
+<%= link_to "Home" , welcome_index_path %>
